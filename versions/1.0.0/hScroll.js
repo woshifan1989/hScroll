@@ -1,6 +1,6 @@
 /**
  * @module hScroll
- * @desc   自定义横向滚动条 
+ * @desc   A simple horizontal scroll plugin
  * @author HI:fanhaiwang2012  <fanhaiwang@baidu.com>
  * @version 1.0.0
  */
