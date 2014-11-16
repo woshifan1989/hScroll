@@ -39,6 +39,7 @@ This is a lightweight plugin, it will automatically produce a horizontal scroll 
     if you don't set parameters or parameters is wrong, it will delete all hScroll that are created by hScroll.
     
     * object（optional）：
+
         ```javascript
         {
             "idName": "idScroll",  //id name
@@ -50,6 +51,7 @@ This is a lightweight plugin, it will automatically produce a horizontal scroll 
     if you don't set parameters or parameters is wrong, it will resize all hScroll that are created by hScroll.
     
     * object（optional）：
+    
         ```javascript
         {
             "idName": "idScroll",  //id name
