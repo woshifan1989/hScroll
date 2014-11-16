@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <style type="text/css">
+        .hScroll{
+            width: 700px;
+            height:1200px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .hScroll_main{
+            width: 1200px;
+            height:1200px;
+        }
+        .btns{text-align: center;}
+    </style>
+</head>
+<body>
+<div style="height:500px;"></div>
+
+
+<div class="hScroll">
+    <div class="hScroll_main">
+        <img src="images/demo.jpg" alt="" width="1200" height="1200">
+    </div>
+</div>
+<div class="btns">
+    <button id="removeScroll">删除滚动条</button>
+    <button id="resetScroll">重置动条</button>
+</div>
+
+
+<div style="height:500px;"></div>
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="js/hScroll.js"></script>
+<script type="text/javascript">
+
+    $(".hScroll").loadHScroll({
+        "idName": "testScroll",
+        "lock": false,
+        "toBottom": 0,
+        "loadedFun": function () {
+            console.log("加载完成");
+        },
+        "moveFun": function () {
+            console.log("moving");
+        }
+    });
+    $("#removeScroll").on("click", function() {
+        $(".hScroll").removeHScroll({
+            "idName": "testScroll"
+        });
+    });
+    $("#resetScroll").on("click", function() {
+        $(".hScroll").resetHScroll({
+            "idName": "testScroll",
+            "lock": true
+        }, 20);
+    });
+
+    $(window).on("scroll", function() {
+        $(".hScroll").trigger("scroll.hScroll.gtable");
+    });
+
+    $(window).on("resize", function() {
+        $(".hScroll").trigger("reset.hScroll.gtable");
+    });
+
+</script>
+</body>
+</html>
